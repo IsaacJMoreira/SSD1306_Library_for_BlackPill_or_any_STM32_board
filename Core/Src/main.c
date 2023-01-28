@@ -128,14 +128,14 @@ uint8_t Xpos = edgeOffset, // Variable that tracks the X coordinate of the ball.
 // Signed Integer Variables
 
   signed int PaddleInteractions = 0,// keeps track of the paddle interactions to build the score
-		     playerScorenum = 0, //keeps track of the score
-			 topScorenum = 0, // keeps track of the highest score after each game
-			 RefreshPeriod = MaxRefreshPeriod; // Used to control the refresh rate of the game.
+		         playerScorenum = 0, //keeps track of the score
+			       topScorenum = 0, // keeps track of the highest score after each game
+			       RefreshPeriod = MaxRefreshPeriod; // Used to control the refresh rate of the game.
 
   // Text buffers
   char playerLifetext[20], // Used to store the text converted from the number of Lives remaining
        playerScoretext[20], //Same logic
-	   topScoretext[30]; // Same logic
+	     topScoretext[30]; // Same logic
 
 /* USER CODE END PV */
 
