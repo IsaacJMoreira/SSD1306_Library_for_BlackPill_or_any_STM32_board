@@ -220,9 +220,11 @@ int main(void)
 
 	  paddlePos = potVal * PotConverter;//Small MAP conversion from the value read and averaged from the ADC
 
+    ssd1306_Fill(BGNDcolour);//Draws the Background first
+
 	  // Draws the paddle, which is consisted of 3 lines. The top line is shorter to make visible the corners.
 	  // this could be done with a function, but given how short this code is, I just can't be bothered
-	  ssd1306_Fill(BGNDcolour);//Background
+	  
 	  ssd1306_Line(paddlePos, 63, paddlePos + paddlelength, 63, ELMTScolour);//paddle
 	  ssd1306_Line(paddlePos, 62, paddlePos + paddlelength, 62, ELMTScolour);//paddle
 	  ssd1306_Line(paddlePos  + paddleCorner, 61, paddlePos + paddlelength - paddleCorner, 61, ELMTScolour);//paddle
