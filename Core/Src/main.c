@@ -13,7 +13,7 @@
   *
   * The purpose of this simple game implementations is to make use of the
   * ssd1306 oled 64p x 128p 0.96'' module with the STM32F411 (Black Pill) or
-  * any STM32 board, provided that you modify the <ssd1306_conf_template.h> to
+  * any STM32 board, provided that you modify the <ssd1306_BlackPill_conf.h> to
   * the device you are using.
   *
   * Here we use the SPI1 peripheral with 2 as the pre-scaler, but make it slower
