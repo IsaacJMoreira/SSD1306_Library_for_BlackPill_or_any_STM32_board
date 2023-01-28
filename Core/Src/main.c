@@ -230,12 +230,14 @@ int main(void)
 	  ssd1306_Line(paddlePos  + paddleCorner, 61, paddlePos + paddlelength - paddleCorner, 61, ELMTScolour);//paddle
 
 	  //Draws the score to the screen
-	  ssd1306_SetCursor(2, 2);// sets the cursor to a fixed position
-	  sprintf(playerScoretext, "Score: %d", playerScorenum);// converts the sore number to the score text
+    //Again, this could be done as a function, but the code is too short and simple. 
+	  ssd1306_SetCursor(2, 2);// sets the cursor to a fixed position X = 2 and Y = 2
+	  sprintf(playerScoretext, "Score: %d", playerScorenum);// converts the score number to the score text (int to string)
 	  ssd1306_WriteString(playerScoretext, Font_6x8, ELMTScolour);//draws it to the screen
 
 	  //Draws the players Lives to the screen. The logic is the same as the score drawing, but a little math is needed first
 	  playerLifenum = (playerLifenum <= 0)? maxLife : playerLifenum;//just make sure that there is no negative lives.
+    
 	  sprintf(playerLifetext, "Lives: %d", playerLifenum);
 	  ssd1306_SetCursor(79, 2);
 	  ssd1306_WriteString(playerLifetext, Font_6x8, ELMTScolour);
@@ -254,12 +256,12 @@ int main(void)
 	   */
 
 	  //First the position of the ball is calculated
-	  //Here we use the uniform linear motion, simplified. The time base is the frame rate.
+	  //Here we use the uniform linear motion equation, simplified. The time base is the frame rate.
 	  Xpos += Xvelocity;
 	  Ypos += Yvelocity;
 
 	  //Here We implement the paddle interaction with the ball
-	  if(Ypos >= paddleYborder)// If the ball is ad the Y coordinate of the paddle
+	  if(Ypos >= paddleYborder)// If the ball is at the Y coordinate of the paddle
 	  {
 		if(((Xpos >= (paddlePos + paddleCorner))&&(Xpos <= (paddlePos + paddlelength - paddleCorner))))//and if the ball is at the center portion of the paddle
 		{
@@ -282,7 +284,7 @@ int main(void)
 			  )//If the ball hits the edges of the paddle
 			{
 			Yvelocity = -Yvelocity; // The ball reverses the vector of it's motion
-			Xvelocity = -Xvelocity; // at a slight angle
+			Xvelocity = -Xvelocity; // at a slight angle (making it go back from the path it too to get there)
 			PaddleInteractions += 10; //The player gets 10 points because its a little more difficult to hit the edges
 			RefreshPeriod -= 2; // The game gets a little bit faster
 			}
