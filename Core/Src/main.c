@@ -216,7 +216,7 @@ int main(void)
 	  potVal += HAL_ADC_GetValue(&hadc1);// Sums the value read to the previously read values
 	  }
 
-	  potVal = potVal/50;//Calculates by the average
+	  potVal = potVal/50;//Calculates the average
 
 	  paddlePos = potVal * PotConverter;//Small MAP conversion from the value read and averaged from the ADC
 
