@@ -19,5 +19,5 @@ Here I provided a simple game called BOUNCE! implemented with this library.
   * PB1 is attached to the DC Pin of the Display.
   * PB2 is attached to the CS Pin of the Display.
   * PB9 is attached to the button and is called GAME_BUTTON with the pull-up ON.
-  * 	When the button is pushed, it has to pull the pin down.
+  * When the button is pushed, it has to pull the pin down.
   * PA1 is attached to the center tap of the potentiometer.
